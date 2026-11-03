@@ -1,4 +1,4 @@
-<title>Първи хапки</title>
+<title>Малки хапки</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
 <style>
@@ -287,7 +287,7 @@ ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 </style>
 
 <header class="top"><div class="wrap">
-  <button class="brand" id="hdr-kid" data-act="kids" aria-label="Деца – смени или добави"><b id="hdr-name">Първи хапки</b><span id="hdr-age">Дневник за захранване</span></button>
+  <button class="brand" id="hdr-kid" data-act="kids" aria-label="Деца – смени или добави"><b id="hdr-name">Малки хапки</b><span id="hdr-age">Дневник за захранване</span></button>
   <span class="pill-mode" id="hdr-mode">зареждане…</span>
 </div></header>
 
@@ -918,7 +918,7 @@ body:`<p>СЗО съветва захранването да започне на
 <p>Храни с много захар, сол и трансмазнини не се дават<sup>[1]</sup>. Подсладени напитки и подсладители – също не. Плодовите сокове, дори 100%, се ограничават<sup>[1]</sup>. На практика: не добавяй сол и захар в храната на бебето.</p>
 <h3>Хранене според сигналите</h3>
 <p>Следи кога бебето е гладно и кога е сито<sup>[2]</sup>. Храни спокойно и търпеливо. Насърчавай, но не насилвай.</p>
-<p>„Първи хапки“ следва насоките на СЗО, но не е свързано със СЗО.</p>`,
+<p>„Малки хапки“ следва насоките на СЗО, но не е свързано със СЗО.</p>`,
 src:[['WHO. WHO Guideline for complementary feeding of infants and young children 6–23 months of age. World Health Organization, 2023.','https://www.who.int/publications/i/item/9789240081864'],
 ['WHO. Infant and young child feeding (fact sheet). World Health Organization, 2026.','https://www.who.int/news-room/fact-sheets/detail/infant-and-young-child-feeding'],
 ['WHO. Complementary feeding (health topic). World Health Organization, прегледано 2026.','https://www.who.int/health-topics/complementary-feeding'],
@@ -936,7 +936,7 @@ body:`<p>Дълго време се смяташе, че алергените т
 <h3>EAT</h3>
 <p>Участват 1303 кърмени бебета от общото население<sup>[4]</sup>. Шест алергена се въвеждат от 3 месеца, но много семейства не успяват да спазят плана. Затова в основния анализ разликата не е значима: 7,1% срещу 5,6%. При бебетата, които спазват плана, алергиите са по-малко: към фъстъци 0% срещу 2,5%, към яйце 1,4% срещу 5,5%<sup>[4]</sup>.</p>
 <h3>Какво казват насоките</h3>
-<p>EAACI съветва добре сготвено яйце като част от захранването – не сурово и не пастьоризирано без готвене. Където алергията към фъстъци е честа – и фъстъци във форма, подходяща за възрастта<sup>[5]</sup>. Насоките на NIAID (САЩ) съветват бебета с тежка екзема и/или алергия към яйце да получат фъстъци още на 4–6 месеца, след преглед при лекар – насоките съветват преди това и изследване<sup>[6]</sup>. В „Първи хапки“ алергените се въвеждат от 6 месеца.</p>
+<p>EAACI съветва добре сготвено яйце като част от захранването – не сурово и не пастьоризирано без готвене. Където алергията към фъстъци е честа – и фъстъци във форма, подходяща за възрастта<sup>[5]</sup>. Насоките на NIAID (САЩ) съветват бебета с тежка екзема и/или алергия към яйце да получат фъстъци още на 4–6 месеца, след преглед при лекар – насоките съветват преди това и изследване<sup>[6]</sup>. В „Малки хапки“ алергените се въвеждат от 6 месеца.</p>
 <h3>Как на практика</h3>
 <ul><li>Фъстък: гладко фъстъчено масло, разредено в каша. Никога цели ядки или парчета<sup>[7]</sup>.</li>
 <li>Яйце: само добре сготвено. Много педиатри започват с жълтъка, после цяло яйце.</li>
@@ -1620,7 +1620,7 @@ async function saveFile(name,text,type){
 function header(){
   const a=ageOf(S.profile.birth);
   // Името горе вляво отваря списъка с деца (смяна или добавяне); стрелката показва, че е меню
-  $('#hdr-name').innerHTML=h(S.profile.name?S.profile.name:'Първи хапки')+(needsOnb()?'':' <span class="caret" aria-hidden="true">▾</span>');
+  $('#hdr-name').innerHTML=h(S.profile.name?S.profile.name:'Малки хапки')+(needsOnb()?'':' <span class="caret" aria-hidden="true">▾</span>');
   $('#hdr-age').textContent=a?`${a.m} м ${a.d} д`+(S.profile.start?` · захранване от ${fmtD(S.profile.start)}`:''):'Дневник за захранване';
   $('#hdr-mode').textContent=READONLY?'само преглед':MODE==='db'?'синхронизирано':MODE==='local'?'на този телефон':'зареждане…';
   document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===UI.tab));
@@ -1910,7 +1910,7 @@ function checklistHtml(list){
   return out;
 }
 function checklistText(){
-  const c=counts();const L=[`Първи хапки – въведени продукти: ${c.intro} от ${c.total}`];
+  const c=counts();const L=[`Малки хапки – въведени продукти: ${c.intro} от ${c.total}`];
   Object.keys(CATS).forEach(k=>{
     const l=PLIST.filter(p=>p.c===k).sort((a,b)=>a.n.localeCompare(b.n,'bg'));if(!l.length)return;const cc=counts(l);
     L.push('');L.push(`${CATS[k]} (${cc.intro}/${cc.total})`);
@@ -2137,10 +2137,10 @@ function gcal(title,details,date,time,daily){
   return u;
 }
 // Ежедневно напомняне в Google Календар (хранения, вечерна проверка, витамин D)
-const remLink=(k,n,time)=>gcal(k==='check'?'Първи хапки: отбележи изхождане и реакции':k==='vitd'?'Първи хапки: витамин D':'Първи хапки: '+n,
+const remLink=(k,n,time)=>gcal(k==='check'?'Малки хапки: отбележи изхождане и реакции':k==='vitd'?'Малки хапки: витамин D':'Малки хапки: '+n,
   k==='vitd'?'Капките витамин D по предписание на педиатъра. Отбележи с тикче на „Днес“.':'Отвори дневника и запиши храненето.',today(),time,true);
 // Напомняне за редовна храна: Google Календар или .ics файл (с известие) за календара на телефона
-const freqTitle=id=>'Първи хапки: '+pName(id).toLowerCase();
+const freqTitle=id=>'Малки хапки: '+pName(id).toLowerCase();
 const freqText=f=>`Редовно даване – ${freqName(f.n)}. Запиши храненето в дневника.`;
 const freqTime=()=>(S.profile.times||{}).breakfast||'09:00';
 function freqGcal(id){const f=freqInfo(id);return gcal(freqTitle(id),freqText(f),freqStart(f),freqTime(),`RRULE:FREQ=DAILY;INTERVAL=${f.n}`)}
@@ -2149,7 +2149,7 @@ function freqIcs(id){
   const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
   // Редове до 75 байта (кирилицата е по 2 байта); продължението започва с интервал
   const fold=l=>{const out=[];let cur='',len=0;for(const ch of l){const c=ch.codePointAt(0),n=c<128?1:c<2048?2:c<65536?3:4;if(len+n>(out.length?74:75)){out.push(cur);cur='';len=0}cur+=ch;len+=n}out.push(cur);return out.join('\r\n ')};
-  return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Parvi hapki//BG','BEGIN:VEVENT','UID:ph-'+id+'-'+uid()+'@parvihapki','DTSTAMP:'+stamp,
+  return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Malki hapki//BG','BEGIN:VEVENT','UID:ph-'+id+'-'+uid()+'@parvihapki','DTSTAMP:'+stamp,
     'DTSTART:'+freqStart(f).replace(/-/g,'')+'T'+pad(hh)+pad(mm)+'00','DURATION:PT15M','RRULE:FREQ=DAILY;INTERVAL='+f.n,
     'SUMMARY:'+esc(freqTitle(id)),'DESCRIPTION:'+esc(freqText(f)),'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+esc(freqTitle(id)),'TRIGGER:PT0M','END:VALARM','END:VEVENT','END:VCALENDAR'].map(fold).join('\r\n')+'\r\n';
 }
@@ -2347,7 +2347,7 @@ function vProfile(){
     <p class="small muted" style="margin:0">Когато отвориш приложението, на „Днес“ виждаш напомняния за изпитвани продукти, реакции, изхождане и продукти за повторен опит. За известия на телефона добави ежедневни събития в Google Календар – той ще звъни в зададения час.</p>
     ${rem.map(([k,n])=>`<div class="row" style="flex-wrap:nowrap"><span style="flex:1;min-width:0;font-weight:700">${n}</span><input class="input" type="time" id="tm-${k}" value="${h((p.times||{})[k]||'')}" style="width:116px" data-act="time" data-k="${k}"><a class="btn sm soft" target="_blank" rel="noopener" href="${remLink(k,n,(p.times||{})[k])}">+ Календар</a></div>`).join('')}
     ${freqList().length?`<div class="label">Редовни храни</div>${freqList().map(f=>`<div class="row" style="flex-wrap:nowrap"><button class="linkish" style="flex:1;min-width:0" data-act="prod" data-p="${f.id}">${h(pName(f.id))} <span class="small muted">· ${h(freqName(f.n))}</span></button><a class="btn sm soft" target="_blank" rel="noopener" href="${freqGcal(f.id)}">+ Календар</a><button class="btn sm" data-act="freq-ics" data-p="${f.id}" aria-label="Файл за календара на телефона">.ics</button></div>`).join('')}`:'<div class="tiny muted">Редовни храни (например яйце през ден) включваш от картата на продукта → „Колко често“.</div>'}
-    ${trials.length?`<div class="label">Изпитвани продукти</div>${trials.map(x=>`<div class="row"><span style="flex:1">${h(x.p.n)} – проверка на ден 3</span><a class="btn sm soft" target="_blank" rel="noopener" href="${gcal('Първи хапки: проверка – '+x.p.n,'3-ти ден от изпитването. Има ли реакция? Ако не – маркирай като въведен.',addDays(x.d0||t,2),'19:00',false)}">+ Календар</a></div>`).join('')}`:''}
+    ${trials.length?`<div class="label">Изпитвани продукти</div>${trials.map(x=>`<div class="row"><span style="flex:1">${h(x.p.n)} – проверка на ден 3</span><a class="btn sm soft" target="_blank" rel="noopener" href="${gcal('Малки хапки: проверка – '+x.p.n,'3-ти ден от изпитването. Има ли реакция? Ако не – маркирай като въведен.',addDays(x.d0||t,2),'19:00',false)}">+ Календар</a></div>`).join('')}`:''}
     <p class="tiny muted" style="margin:0">Промененият час важи за бутона веднага; запази профила, за да го запомниш.</p>
   </div>
 
@@ -2698,7 +2698,7 @@ function vOnboarding(){
   const o=ONB||(ONB={step:0,name:'',sex:'f',birth:'',start:today(),bf:true,picked:[]});
   const dots=`<div class="onb-dots" aria-label="Стъпка ${o.step+1} от 3">${[0,1,2].map(i=>`<i class="${i<=o.step?'on':''}"></i>`).join('')}</div>`;
   let body;
-  if(o.step===0)body=`<h1 class="onb-h">Здравей!</h1><p class="lead-s">„Първи хапки“ помага да следиш захранването по насоките на СЗО: кое е въведено, как реагира бебето и какво да сготвиш.</p>
+  if(o.step===0)body=`<h1 class="onb-h">Здравей!</h1><p class="lead-s">„Малки хапки“ помага да следиш захранването по насоките на СЗО: кое е въведено, как реагира бебето и какво да сготвиш.</p>
     <div class="field"><label class="label" for="o-name">Как се казва бебето?</label><input class="input" id="o-name" value="${h(o.name)}" placeholder="напр. Мария" autocomplete="off"></div>
     <div class="field"><label class="label" for="o-sex">Пол (за кривите на растеж)</label><select class="input" id="o-sex"><option value="f" ${o.sex!=='m'?'selected':''}>Момиче</option><option value="m" ${o.sex==='m'?'selected':''}>Момче</option></select></div>`;
   else if(o.step===1)body=`<h1 class="onb-h">На колко е${o.name?' '+h(o.name):''}?</h1><p class="lead-s">Възрастта определя кои храни са подходящи и какво препоръчва СЗО.</p>
@@ -2776,7 +2776,7 @@ document.addEventListener('click',async e=>{
     case 'freq':{const id=b.dataset.p;const n=+v;S.prod.freq={...freqs()};if(n)S.prod.freq[id]=n;else delete S.prod.freq[id];
       bump();saveProd();render();productSheet(id);toast(n?`${P[id].n} – ${freqName(n)}`:'Напомнянето е спряно');break}
     case 'freq-ics':{const id=b.dataset.p;if(!freqInfo(id))break;
-      try{const r=await saveFile('parvi-hapki-'+id+'.ics',freqIcs(id),'text/calendar');if(r)toast(r==='shared'?'Избери „Календар“, за да го добавиш':'Отвори файла, за да го добавиш в календара')}
+      try{const r=await saveFile('malki-hapki-'+id+'.ics',freqIcs(id),'text/calendar');if(r)toast(r==='shared'?'Избери „Календар“, за да го добавиш':'Отвори файла, за да го добавиш в календара')}
       catch(err){toast(err&&err.code==='unavailable'?'Изтеглянето не е налично тук':'Файлът не се създаде')}break}
     case 'art':articleSheet(v);break;
     case 'msub':UI.msub=v;render();window.scrollTo(0,0);break;
@@ -2801,11 +2801,11 @@ document.addEventListener('click',async e=>{
       if(MODE==='local'&&kidsList().length>1){data.kid=KID;data.kids=kidsList().map(k=>({id:k.id,name:k.name||'',birth:k.birth||'',data:k.id===KID?{profile:S.profile,prod:S.prod,days:S.days,growth:S.growth,plan:S.plan,freezer:S.freezer}:lsLoadFor(k.id)}))}
       const withPh=$('#exp-photos')&&$('#exp-photos').checked;
       if(withPh){b.textContent='Подготвям…';try{data.photos=await LocalPhotos.exportAll()}catch(err){toast('Снимките не можаха да се добавят')}}
-      try{const r=await saveFile('parvi-hapki-'+today()+'.json',JSON.stringify(data));
+      try{const r=await saveFile('malki-hapki-'+today()+'.json',JSON.stringify(data));
         if(r){try{localStorage.setItem('ph-backup',today())}catch(err){}toast(r==='shared'?'Избери къде да запазиш копието':'Копието е изтеглено');render()}}
       catch(err){toast(err&&err.code==='unavailable'?'Изтеглянето не е налично тук':'Изтеглянето не успя')}
       break}
-    case 'share-app':{const url=new URL('../',location.href).href;const data={title:'Първи хапки',text:'Безплатен дневник за захранване на бебе по насоките на СЗО',url};
+    case 'share-app':{const url=new URL('../',location.href).href;const data={title:'Малки хапки',text:'Безплатен дневник за захранване на бебе по насоките на СЗО',url};
       if(navigator.share){try{await navigator.share(data)}catch(err){}break}
       try{await navigator.clipboard.writeText(url);toast('Линкът е копиран')}catch(err){toast(url)}break}
     case 'import':$('#import-file').click();break;
@@ -2951,7 +2951,7 @@ $('#import-file').addEventListener('change',async e=>{
   try{const d=JSON.parse(await f.text());if(d.app!=='parvi-hapki')throw 0;pendingImport=d;
     const n=Object.keys(d.days||{}).length;const ks=MODE==='local'&&Array.isArray(d.kids)&&d.kids.length>1?d.kids:null;
     $('#import-confirm').innerHTML=`<div class="alert a-react" style="margin-top:10px"><div>${ks?`Файлът съдържа данни за <b>${ks.length} деца</b> (${ks.map(k=>h(k.name||'Бебе')).join(', ')}). Възстановяването ще <b>замени</b> данните на всички деца на този телефон.`:`Файлът съдържа <b>${n}</b> дни записи. Възстановяването ще <b>замени</b> всички сегашни данни${kidsList().length>1?` на ${h(S.profile.name||'това дете')}`:''}.`}</div><div class="row"><button class="btn sm danger" data-act="import-yes">Замени данните</button><button class="btn sm" data-act="import-no">Откажи</button></div></div>`;
-  }catch(err){toast('Файлът не е копие от Първи хапки')}
+  }catch(err){toast('Файлът не е копие от Малки хапки')}
 });
 async function applyImport(){
   const d=pendingImport;if(!d)return;pendingImport=null;

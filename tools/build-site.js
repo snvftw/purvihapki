@@ -1,4 +1,4 @@
-// Сглобява целия сайт „Първи хапки“ в папка parvi-hapki-site/ за качване в Netlify:
+// Сглобява целия сайт „Малки хапки“ в папка parvi-hapki-site/ за качване в Netlify:
 //   /                 представителна страница (site-src/index.html)
 //   /app/             приложението (от parvi-hapki.html), работи без интернет
 //   /poveritelnost/, /usloviya/, /iztochnici/   правни страници (site-src/pages/)
@@ -52,7 +52,7 @@ const pageShell = (title, desc, slug, body) => `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>${esc(title)} – Първи хапки</title>
+<title>${esc(title)} – Малки хапки</title>
 <meta name="description" content="${esc(desc)}">
 ${siteUrl ? `<link rel="canonical" href="${siteUrl}/${slug}/">\n` : ''}<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
 <link rel="stylesheet" href="/fonts/fonts.css">
@@ -60,7 +60,7 @@ ${siteUrl ? `<link rel="canonical" href="${siteUrl}/${slug}/">\n` : ''}<link rel
 </head>
 <body>
 <header class="site"><div class="wrap nav">
-  <a class="logo" href="/"><img src="/icons/icon-192.png" alt="">Първи хапки</a>
+  <a class="logo" href="/"><img src="/icons/icon-192.png" alt="">Малки хапки</a>
   <nav class="nav-links" aria-label="Основно меню"><a class="btn primary sm" href="/app/"><span class="long">Отвори приложението</span><span class="short">Отвори</span></a></nav>
 </div></header>
 <main class="wrap doc">
@@ -68,10 +68,10 @@ ${body}
 </main>
 <footer class="site"><div class="wrap">
   <div class="foot">
-    <span>© ${now.getFullYear()} Първи хапки</span>
+    <span>© ${now.getFullYear()} Малки хапки</span>
     <nav aria-label="Правна информация"><a href="/poveritelnost/">Поверителност</a><a href="/usloviya/">Общи условия</a><a href="/iztochnici/">Източници</a><a href="mailto:${esc(cfg.email)}">Контакт</a></nav>
   </div>
-  <p class="disclaimer">Първи хапки помага с организацията на захранването и следва публикуваните насоки на СЗО. Не е медицинско изделие и не замества консултацията с педиатър.</p>
+  <p class="disclaimer">Малки хапки помага с организацията на захранването и следва публикуваните насоки на СЗО. Не е медицинско изделие и не замества консултацията с педиатър.</p>
 </div></footer>
 </body>
 </html>
@@ -104,7 +104,7 @@ write('app/index.html', `<!doctype html>
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111813">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Първи хапки">
+<meta name="apple-mobile-web-app-title" content="Малки хапки">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -119,8 +119,8 @@ ${src.slice(cut)}<script>if('serviceWorker' in navigator){addEventListener('load
 `);
 write('app/version.json', JSON.stringify({ v: VERSION }));
 write('app/manifest.webmanifest', JSON.stringify({
-  name: 'Първи хапки – дневник за захранване',
-  short_name: 'Първи хапки',
+  name: 'Малки хапки – дневник за захранване',
+  short_name: 'Малки хапки',
   description: 'Дневник за захранване на бебе по насоките на СЗО',
   lang: 'bg', start_url: './', scope: './', display: 'standalone',
   background_color: '#F4F7F1', theme_color: '#2D7A55',
@@ -130,7 +130,7 @@ write('app/manifest.webmanifest', JSON.stringify({
     { src: '/icons/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
   ]
 }, null, 2));
-write('app/sw.js', `// Първи хапки – работа без интернет (версия ${VERSION})
+write('app/sw.js', `// Малки хапки – работа без интернет (версия ${VERSION})
 const CACHE = 'ph-app-${VERSION}';
 const CORE = ['./', './index.html', './manifest.webmanifest', '/icons/icon-192.png', '/icons/apple-touch-icon.png', '/fonts/fonts.css', ${fontFiles.map(f => `'/fonts/${f}'`).join(', ')}];
 self.addEventListener('install', e => {
@@ -212,17 +212,22 @@ function png(w, h, pixel) {
   return Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), chunk('IHDR', ihdr), chunk('IDAT', zlib.deflateSync(raw, { level: 9 })), chunk('IEND', Buffer.alloc(0))]);
 }
 const hex = s => [parseInt(s.slice(1, 3), 16), parseInt(s.slice(3, 5), 16), parseInt(s.slice(5, 7), 16)];
-const C = { bg: hex('#2D7A55'), bowl: hex('#F4F7F1'), rim: hex('#DCEFE3'), food: hex('#F0A35E'), leaf: hex('#9ED4B3') };
-// Купичка с пюре и листенце в квадрат (x, y от 0 до 1); scale < 1 оставя поле за маскираните иконки
+const C = { bg: hex('#2D7A55'), fruit: hex('#F0A35E'), shine: hex('#F8C894'), flesh: hex('#FFF1DC'), leaf: hex('#9ED4B3'), stem: hex('#6E4A2A') };
+// „Малки хапки“: кайсия с отхапано парче (следи от зъбки), листенце и дръжка (x, y от 0 до 1); scale < 1 оставя поле за маскираните иконки
+const BITES = [-28, 2, 32].map(a => [0.48 + 0.31 * Math.cos(a * Math.PI / 180), 0.56 + 0.31 * Math.sin(a * Math.PI / 180)]);
 function art(x0, y0, scale) {
   const x = 0.5 + (x0 - 0.5) / scale, y = 0.5 + (y0 - 0.5) / scale;
-  const a = -0.55, lx = x - 0.575, ly = y - 0.325;
+  const a = -0.5, lx = x - 0.58, ly = y - 0.215;
   const rx = lx * Math.cos(a) - ly * Math.sin(a), ry = lx * Math.sin(a) + ly * Math.cos(a);
-  if (y >= 0.51 && y <= 0.56 && x >= 0.17 && x <= 0.83) return C.rim;
-  if (y > 0.555 && ((x - 0.5) / 0.31) ** 2 + ((y - 0.555) / 0.24) ** 2 <= 1) return C.bowl;
-  if ((x - 0.5) ** 2 + (y - 0.53) ** 2 <= 0.2 ** 2 && y < 0.53) return C.food;
-  if ((rx / 0.085) ** 2 + (ry / 0.04) ** 2 <= 1) return C.leaf;
-  return C.bg;
+  if ((rx / 0.09) ** 2 + (ry / 0.042) ** 2 <= 1) return C.leaf;
+  if (Math.abs(x - 0.475 - (0.29 - y) * 0.15) <= 0.016 && y >= 0.17 && y <= 0.3) return C.stem;
+  const d = Math.hypot(x - 0.48, y - 0.56);
+  if (d > 0.29) return C.bg;
+  const bite = Math.min(...BITES.map(([bx, by]) => Math.hypot(x - bx, y - by) - 0.095));
+  if (bite < 0) return C.bg;           // отхапаното
+  if (bite < 0.028) return C.flesh;    // светлата плът по ръба на хапката
+  if (Math.hypot(x - 0.385, y - 0.455) < 0.055) return C.shine;
+  return C.fruit;
 }
 const icon = (size, scale) => png(size, size, (px, py) => art(px / size, py / size, scale));
 write('icons/apple-touch-icon.png', icon(180, 1));
