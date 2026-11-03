@@ -212,22 +212,20 @@ function png(w, h, pixel) {
   return Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), chunk('IHDR', ihdr), chunk('IDAT', zlib.deflateSync(raw, { level: 9 })), chunk('IEND', Buffer.alloc(0))]);
 }
 const hex = s => [parseInt(s.slice(1, 3), 16), parseInt(s.slice(3, 5), 16), parseInt(s.slice(5, 7), 16)];
-const C = { bg: hex('#2D7A55'), fruit: hex('#F0A35E'), shine: hex('#F8C894'), flesh: hex('#FFF1DC'), leaf: hex('#9ED4B3'), stem: hex('#6E4A2A') };
-// „Малки хапки“: кайсия с отхапано парче (следи от зъбки), листенце и дръжка (x, y от 0 до 1); scale < 1 оставя поле за маскираните иконки
-const BITES = [-28, 2, 32].map(a => [0.48 + 0.31 * Math.cos(a * Math.PI / 180), 0.56 + 0.31 * Math.sin(a * Math.PI / 180)]);
+const C = { bg: hex('#2D7A55'), bib: hex('#FFF7EC'), trim: hex('#F8C894'), spoon: hex('#2D7A55'), puree: hex('#F0A35E'), shine: hex('#F8C894') };
+const segD = (x, y, ax, ay, bx, by) => { const dx = bx - ax, dy = by - ay; const t = Math.max(0, Math.min(1, ((x - ax) * dx + (y - ay) * dy) / (dx * dx + dy * dy))); return Math.hypot(x - ax - t * dx, y - ay - t * dy); };
+const inEll = (x, y, cx, cy, rx, ry, a) => { const lx = x - cx, ly = y - cy; const X = lx * Math.cos(a) - ly * Math.sin(a), Y = lx * Math.sin(a) + ly * Math.cos(a); return (X / rx) ** 2 + (Y / ry) ** 2 <= 1; };
+// „Малки хапки“: бебешки лигавник с лъжичка пюре (x, y от 0 до 1); scale < 1 оставя поле за маскираните иконки
 function art(x0, y0, scale) {
   const x = 0.5 + (x0 - 0.5) / scale, y = 0.5 + (y0 - 0.5) / scale;
-  const a = -0.5, lx = x - 0.58, ly = y - 0.215;
-  const rx = lx * Math.cos(a) - ly * Math.sin(a), ry = lx * Math.sin(a) + ly * Math.cos(a);
-  if ((rx / 0.09) ** 2 + (ry / 0.042) ** 2 <= 1) return C.leaf;
-  if (Math.abs(x - 0.475 - (0.29 - y) * 0.15) <= 0.016 && y >= 0.17 && y <= 0.3) return C.stem;
-  const d = Math.hypot(x - 0.48, y - 0.56);
-  if (d > 0.29) return C.bg;
-  const bite = Math.min(...BITES.map(([bx, by]) => Math.hypot(x - bx, y - by) - 0.095));
-  if (bite < 0) return C.bg;           // отхапаното
-  if (bite < 0.028) return C.flesh;    // светлата плът по ръба на хапката
-  if (Math.hypot(x - 0.385, y - 0.455) < 0.055) return C.shine;
-  return C.fruit;
+  const body = Math.hypot(x - 0.5, y - 0.6), neck = Math.hypot(x - 0.5, y - 0.2);
+  if (segD(x, y, 0.37, 0.29, 0.27, 0.13) <= 0.022 || segD(x, y, 0.63, 0.29, 0.73, 0.13) <= 0.022) return C.trim;   // връзки
+  if (body > 0.36 || neck <= 0.16) return C.bg;
+  if (body > 0.325 || neck < 0.19) return C.trim;                                                                  // кант
+  if (inEll(x, y, 0.425, 0.555, 0.072, 0.05, -0.72) || Math.hypot(x - 0.405, y - 0.528) < 0.034)
+    return Math.hypot(x - 0.395, y - 0.522) < 0.013 ? C.shine : C.puree;                                        // пюре
+  if (inEll(x, y, 0.455, 0.585, 0.125, 0.085, -0.72) || segD(x, y, 0.53, 0.665, 0.665, 0.81) <= 0.03) return C.spoon;   // лъжичка
+  return C.bib;
 }
 const icon = (size, scale) => png(size, size, (px, py) => art(px / size, py / size, scale));
 write('icons/apple-touch-icon.png', icon(180, 1));
