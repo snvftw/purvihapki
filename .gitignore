@@ -1,0 +1,4 @@
+# Изход от node tools/build-site.js – създава се наново при всяко изграждане
+parvi-hapki-site/
+parvi-hapki-site.zip
+node_modules/

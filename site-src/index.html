@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Първи хапки – дневник за захранване на бебе по насоките на СЗО</title>
+<meta name="description" content="Безплатно приложение за захранване на бебе: кои храни са въведени и колко остават, реакции, пюрета, които си подхождат, календар, растеж по СЗО, меню и фризер. Без регистрация.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4F7F1">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111813">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:title" content="Първи хапки – дневник за захранване на бебе">
+<meta property="og:description" content="Кои храни са въведени, реакции, пюрета, които си подхождат, растеж по СЗО. Безплатно и без регистрация.">
+{{HEAD_META}}
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/site.css">
+<script>
+// Стара иконка на началния екран (приложението беше на главния адрес) – пренасочи към приложението
+if(window.navigator.standalone===true||(window.matchMedia&&matchMedia('(display-mode: standalone)').matches))location.replace('/app/');
+</script>
+</head>
+<body>
+
+<header class="site"><div class="wrap nav">
+  <a class="logo" href="/"><img src="/icons/icon-192.png" alt="">Първи хапки</a>
+  <nav class="nav-links" aria-label="Основно меню">
+    <a href="#vazmozhnosti">Възможности</a>
+    <a href="#szo">По СЗО</a>
+    <a href="#instalirane">Инсталиране</a>
+    <a href="#vaprosi">Въпроси</a>
+    <a class="btn primary sm" href="/app/"><span class="long">Отвори приложението</span><span class="short">Отвори</span></a>
+  </nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <span class="eyebrow">Безплатно · без регистрация</span>
+    <h1>Дневник за захранване на бебето – по насоките на СЗО</h1>
+    <p class="lead">Следи кои храни са въведени и колко остават, как реагира бебето и какво да сготвиш днес. Пюрета, които си подхождат на вкус и помагат за усвояването на желязото.</p>
+    <div class="cta">
+      <a class="btn primary" href="/app/">Започни безплатно</a>
+      <a class="btn" href="#instalirane">Как да го инсталирам</a>
+    </div>
+    <ul class="trust">
+      <li>150 продукта и 96 пюрета</li>
+      <li>Работи без интернет</li>
+      <li>Данните остават в телефона ти</li>
+    </ul>
+  </div>
+
+  <div class="phone" role="img" aria-label="Пример за екрана „Днес“ в приложението">
+    <div class="screen" aria-hidden="true">
+      <div class="s-top"><div><b>Ния</b><span>6 м 12 д · захранване от 15 октомври</span></div><span class="s-pill">на този телефон</span></div>
+      <div class="s-body">
+        <div class="s-alert"><b>Ден 2 от 3: Тиквичка</b><br><span class="muted">Следи за обрив, повръщане, диария.</span></div>
+        <div class="s-card">
+          <div class="s-row"><b>Въведени продукти</b><span><b>23</b> <span class="muted">от 150</span></span></div>
+          <div class="s-bar"><i style="width:25%;background:var(--leaf)"></i><i style="width:2%;background:var(--apricot)"></i></div>
+        </div>
+        <div class="s-card">
+          <div class="s-row"><b>Обяд</b><span style="font-size:15px">😍</span></div>
+          <div style="margin-top:4px"><span class="s-tag t-abs">пюре</span> Сладък картоф, пилешко, магданоз <span class="muted">90 г</span></div>
+        </div>
+        <div class="s-card">
+          <div class="s-row"><b>Овесена каша с круша и канела</b></div>
+          <div style="margin-top:6px;display:flex;gap:4px;flex-wrap:wrap"><span class="s-tag t-r">Разхлабващо</span><span class="s-tag t-abs">Желязо + витамин C</span></div>
+        </div>
+        <div class="s-card">
+          <div class="s-row"><b>Разнообразие днес</b><span><b>5</b> <span class="muted">от 8 групи</span></span></div>
+        </div>
+      </div>
+      <div class="s-tabs"><span class="on">Днес</span><span>Продукти</span><span>Комбинации</span><span>Календар</span><span>Още</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="band" id="vazmozhnosti"><div class="wrap">
+  <div class="section-head">
+    <h2>Всичко за захранването на едно място</h2>
+    <p>Без тетрадки и таблици. Записваш храненето за секунди, а приложението помни кое е въведено, кое е ново и кое не е харесано.</p>
+  </div>
+  <div class="features">
+    <div class="feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg>
+      <h3>Кое е въведено и колко остават</h3>
+      <p>150 зеленчука, плода, меса, риби, каши и алергени с отброяване – общо, по категории и като чеклист с отметки.</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <h3>Коя нова храна днес</h3>
+      <p>План „Първите 30 храни“ и програма за алергените – кога е ред на яйце, фъстък и риба. Всеки нов продукт – 3 дни наблюдение.</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M8 8c0-2 1.5-3 1.5-5M13 8c0-2 1.5-3 1.5-5"/></svg>
+      <h3>Пюрета, които си подхождат</h3>
+      <p>96 комбинации по вкус и по усвояване: желязо с витамин C, витамин A с мазнина. За всеки нов продукт – с кои от въведените си отива.</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg>
+      <h3>Запичащо или разхлабващо</h3>
+      <p>Дневникът за изхождане подрежда предложенията, когато бебето е запекло или изхожда по-рядко.</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      <h3>Календар на храненията</h3>
+      <p>Закуска, обяд, следобедна закуска: какво, колко грама, дали е харесало, консистенция и снимка.</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-7 4 4 8-10"/><path d="M15 7h6v6"/></svg>
+      <h3>Растеж по кривите на СЗО</h3>
+      <p>Тегло и ръст с перцентили за момичета и момчета и предупреждение при рязък спад.</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+      <h3>Меню, пазар и фризер</h3>
+      <p>Седмично меню от въведените продукти, списък за магазина и колко порции пюре имаш замразени.</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4 7.2 16.9l.9-5.4L4.2 7.7l5.4-.8z"/></svg>
+      <h3>Как да го поднесеш</h3>
+      <p>За всяка храна: пюре, намачкано или парченца според възрастта, с размери, риск от задавяне и какво е опасно.</p>
+    </div>
+    <div class="feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
+      <h3>Справка за педиатъра</h3>
+      <p>Въведени продукти, реакции, алергени, растеж и бележки (зъбки, ваксини) в един текст.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="szo"><div class="wrap who">
+  <div>
+    <h2>По насоките на Световната здравна организация</h2>
+    <p class="muted" style="margin-top:12px">Правилата в приложението следват публикуваните насоки на СЗО за хранене на бебета и малки деца от 6 до 23 месеца и стандартите ѝ за растеж.</p>
+    <p class="note">Приложението не е създадено, одобрено или свързано със СЗО. <a href="/iztochnici/">Виж източниците</a>.</p>
+  </div>
+  <ul class="checks">
+    <li>Захранване от 6 месеца, кърменето продължава до 2 години и след това</li>
+    <li>Колко хранения на ден и каква консистенция според възрастта</li>
+    <li>Разнообразие – поне 5 от 8 групи храни на ден</li>
+    <li>Месо, риба или яйца и плодове и зеленчуци всеки ден</li>
+    <li>Без добавена сол и захар, без мед преди 12 месеца</li>
+    <li>Тегло и ръст спрямо кривите на СЗО за растеж</li>
+  </ul>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="section-head"><h2>Как започваш</h2></div>
+  <ol class="steps">
+    <li><h3>Отвори и добави на началния екран</h3><p>Приложението се инсталира от браузъра за няколко секунди – без App Store и без регистрация.</p></li>
+    <li><h3>Отбележи вече въведените храни</h3><p>С „Бързо отбелязване“ докосваш продуктите, които бебето вече е яло.</p></li>
+    <li><h3>Записвай храненията</h3><p>Получаваш напомняния за новите продукти и предложения за пюрета от това, което вече яде.</p></li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <div class="section-head"><h2>Данните остават при теб</h2></div>
+  <div class="privacy">
+    <div><h3>Без регистрация</h3><p>Не искаме имейл, име или парола. Отваряш и започваш.</p></div>
+    <div><h3>Само в телефона ти</h3><p>Храненията, реакциите и снимките се пазят на устройството. Ние не ги виждаме.</p></div>
+    <div><h3>Резервно копие с едно докосване</h3><p>Изтегляш копие и го възстановяваш на нов телефон, когато поискаш.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="instalirane"><div class="wrap install">
+  <div>
+    <h2>Как да го инсталирам</h2>
+    <p class="muted" style="margin:12px 0 20px">Отвори приложението от телефона си и го добави на началния екран. После го отваряй от иконката.</p>
+    <div class="seg" role="tablist" aria-label="Телефон">
+      <button role="tab" aria-selected="true" aria-controls="howto-ios" id="tab-ios" data-tab="ios">iPhone</button>
+      <button role="tab" aria-selected="false" aria-controls="howto-android" id="tab-android" data-tab="android">Android</button>
+    </div>
+    <ol class="howto" id="howto-ios" role="tabpanel" aria-labelledby="tab-ios">
+      <li>Отвори <a href="/app/">приложението</a> в <b>Safari</b>.</li>
+      <li>Натисни бутона <b>„Сподели“</b> (квадратчето със стрелка нагоре).</li>
+      <li>Избери <b>„Добави към началния екран“</b> и натисни „Добави“.</li>
+      <li>Отваряй „Първи хапки“ от новата иконка.</li>
+    </ol>
+    <ol class="howto" id="howto-android" role="tabpanel" aria-labelledby="tab-android" hidden>
+      <li>Отвори <a href="/app/">приложението</a> в <b>Chrome</b>.</li>
+      <li>Натисни менюто <b>⋮</b> горе вдясно.</li>
+      <li>Избери <b>„Инсталиране на приложението“</b> или „Добавяне към началния екран“.</li>
+      <li>Отваряй „Първи хапки“ от новата иконка.</li>
+    </ol>
+    <div class="cta" style="margin-top:24px"><a class="btn primary" href="/app/">Отвори приложението</a></div>
+  </div>
+  <div class="qr">
+    <div id="qrcode"></div>
+    <p>На компютър ли си? Сканирай кода с камерата на телефона.</p>
+  </div>
+</div></section>
+
+<section id="vaprosi"><div class="wrap">
+  <div class="section-head"><h2>Често задавани въпроси</h2></div>
+  <div class="faq">
+    <details><summary>Наистина ли е безплатно?</summary><p>Да. Всички функции в момента са безплатни и не изискват регистрация.</p></details>
+    <details><summary>Къде се пазят данните?</summary><p>Само в телефона ти, в паметта на браузъра. Не ги изпращаме никъде и нямаме достъп до тях. Затова от време на време направи резервно копие от „Още → Резервно копие“.</p></details>
+    <details><summary>Как да го пренеса на нов телефон?</summary><p>На стария телефон изтегли резервно копие, запази файла (например в iCloud или Google Drive), отвори приложението на новия телефон и натисни „Възстанови“.</p></details>
+    <details><summary>Работи ли без интернет?</summary><p>Да. Отвори го веднъж с интернет и после работи и без мрежа.</p></details>
+    <details><summary>От кога да започна захранването?</summary><p>СЗО препоръчва изключително кърмене до 6 месеца и захранване от 6-ия месец. Кога е подходящо за твоето бебе, реши с педиатъра.</p></details>
+    <details><summary>Замества ли педиатъра?</summary><p>Не. Приложението помага да организираш захранването и следва насоките на СЗО, но не дава медицински съвет. При реакция към храна се консултирай с лекар, а при подуване на лицето или затруднено дишане звънни на 112.</p></details>
+    <details><summary>Защо не е в App Store или Google Play?</summary><p>Това е уеб приложение – инсталира се директно от браузъра, обновява се само и работи на iPhone и Android.</p></details>
+  </div>
+</div></section>
+
+<section class="band final"><div class="wrap">
+  <h2>Започни захранването спокойно</h2>
+  <p>Отвори приложението, отбележи какво вече яде бебето и получи първите предложения за пюрета.</p>
+  <a class="btn primary" href="/app/">Започни безплатно</a>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="foot">
+    <span>© {{YEAR}} Първи хапки</span>
+    <nav aria-label="Правна информация"><a href="/poveritelnost/">Поверителност</a><a href="/usloviya/">Общи условия</a><a href="/iztochnici/">Източници</a><a href="mailto:{{EMAIL}}">Контакт</a></nav>
+  </div>
+  <p class="disclaimer">Първи хапки помага с организацията на захранването и следва публикуваните насоки на СЗО. Не е медицинско изделие и не замества консултацията с педиатър.</p>
+</div></footer>
+
+<script src="/js/qrcode.min.js"></script>
+<script>
+document.querySelectorAll('.seg [role="tab"]').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.seg [role="tab"]').forEach(function(x){
+      var on=x===b;x.setAttribute('aria-selected',on?'true':'false');
+      document.getElementById('howto-'+x.dataset.tab).hidden=!on;
+    });
+  });
+});
+if(/android/i.test(navigator.userAgent))document.getElementById('tab-android').click();
+try{new QRCode(document.getElementById('qrcode'),{text:location.origin+'/app/',width:160,height:160,colorDark:'#1D2A22',colorLight:'#ffffff'})}catch(e){document.querySelector('.qr').hidden=true}
+</script>
+</body>
+</html>

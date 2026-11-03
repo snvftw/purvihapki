@@ -1,0 +1,5 @@
+# Ако сайтът в Netlify се свърже с GitHub, Netlify сам изгражда и публикува при всяка промяна.
+# При ръчно качване на папката parvi-hapki-site този файл не се използва.
+[build]
+  command = "node tools/build-site.js"
+  publish = "parvi-hapki-site"
